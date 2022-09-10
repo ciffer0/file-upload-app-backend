@@ -1,4 +1,4 @@
-const { insertNewFile, selectAllFiles } = require('../models')
+const { insertNewFile, selectAllFiles, supprimerFile } = require('../models')
 
 const uploadNewFile = (req, res) => {
     insertNewFile(req, (err, results) => {
@@ -18,4 +18,15 @@ const getAllFiles = (req, res) => {
     });
 }
 
-module.exports = { uploadNewFile, getAllFiles };
+const deleteFile = (req, res) => {
+    const id = req.params.id;
+    supprimerFile(id, (err, results) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(results);
+      }
+    });
+};
+
+module.exports = { uploadNewFile, getAllFiles, deleteFile };

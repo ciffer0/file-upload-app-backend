@@ -1,6 +1,7 @@
 const multer = require("multer");
 
 const MIME_TYPES = {
+    "video/x-matroska": "mkv",
   "application/pdf": "pdf",
   "image/jpg": "jpg",
   "image/jpeg": "jpg",

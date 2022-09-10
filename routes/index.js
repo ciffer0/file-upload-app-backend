@@ -1,5 +1,5 @@
 const express = require('express');
-const { uploadNewFile, getAllFiles } = require('../controllers')
+const { uploadNewFile, getAllFiles, deleteFile } = require('../controllers')
 const { multerMiddleware } = require('../middleware')
 
 const router = express.Router();
@@ -12,7 +12,7 @@ router.get('/getAllFiles', getAllFiles);
 router.post('/uploadNewFile', multerMiddleware,uploadNewFile);
 
 // * Delete file by id
-/* router.delete('/deleteFile/:id', deleteFile); */
+router.delete('/deleteFile/:id', deleteFile);
 
 
 
