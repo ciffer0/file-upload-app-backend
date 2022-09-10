@@ -1,12 +1,12 @@
 const express = require('express');
-const { uploadNewFile } = require('../controllers')
+const { uploadNewFile, getAllFiles } = require('../controllers')
 const { multerMiddleware } = require('../middleware')
 
 const router = express.Router();
 
 
 // * Get all files
-/* router.get('/getAllFiles', getAllFiles); */
+router.get('/getAllFiles', getAllFiles);
 
 // * Post new file
 router.post('/uploadNewFile', multerMiddleware,uploadNewFile);
